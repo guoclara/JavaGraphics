@@ -44,11 +44,15 @@ public class ShapePanel extends JPanel
 
 
 		//instantiate a Shape
+                Shape s1 = new Shape(100, 100, 50, 100, Color.blue);
+                s1.draw(window);
 		//tell your shape to draw
-
+                Shape s2 = new Shape(300, 400, 30, 80, Color.red);
+                s2.draw(window);
 		//instantiate a Shape
 		//tell your shape to draw
-
+                Shape s3 = new Shape(500, 200, 20, 60, Color.MAGENTA);
+                s3.draw(window);
 		//instantiate a Shape
 		//tell your shape to draw
 	}

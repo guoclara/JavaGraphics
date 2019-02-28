@@ -23,15 +23,20 @@ public class Shape
    public Shape(int x, int y, int wid, int ht, Color col)
    {
 		xPos = x;
-		//finish this constructor
+                yPos = y;
+                width = wid;
+                height = ht;
+                color = col;
    }
 
 
    public void draw(Graphics window)
    {
       window.setColor(color);
-      window.fillRect(xPos, yPos, width, height);
-
+      window.fillRect(xPos, yPos, getWidth(), getHeight());
+      window.fillRect(xPos-getHeight()/2+getWidth()/2, yPos+getHeight()/2-getWidth()/2, getHeight(), getWidth());
+      window.setColor(Color.white);
+      window.fillOval(xPos, yPos+getHeight()/2-width/2, width, width);
       //draw whatever you want
       //    ^
       //  [ :: ]
@@ -44,6 +49,20 @@ public class Shape
 
    public String toString()
    {
-   	return xPos+" "+yPos+" "+width+" "+height+" "+color;
+   	return xPos+" "+yPos+" "+getWidth()+" "+getHeight()+" "+color;
    }
+
+    /**
+     * @return the height
+     */
+    public int getHeight() {
+        return height;
+    }
+
+    /**
+     * @return the width
+     */
+    public int getWidth() {
+        return width;
+    }
 }
